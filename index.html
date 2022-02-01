@@ -46,21 +46,24 @@
         questions!
       </h2>
     </div>
+    <footer> This is footer i guess</footer>
     <script>
       /* EXERCISE 1
        Write a function for changing the title of the document in something else.
       */
 
       const changeTitle = function (newTitle) {
-        //
+        const h1 = document.querySelector("h1")
+        h1.innerText = newTitle
       };
+      //console.log(changeTitle("New Title Here"))
 
       /* EXERCISE 2
        Write a function for changing the class of the title of the page in "myHeading".
       */
 
       const addClassToTitle = function () {
-        //
+        // i dont understand this question, i cant find any element with class "myHeading"
       };
 
       /* EXERCISE 3
@@ -68,64 +71,95 @@
       */
 
       const changePcontent = function () {
-        //
+        const p = document.querySelector("div p")
+        p.innerText = "changing p"
       };
+      //console.log(changePcontent ("changing p to something"))
 
-      /* EXERCISE 4
+      /* EXERCISE 4 
        Write a function for changing the href property of every link to https://www.google.com
       */
 
       const changeUrls = function () {
-        //
-      };
+        const allA = document.querySelectorAll("a")
+        for (let i=0; i<allA.length; i++){
+            allA[i].href = "https://www.google.com"
+      }
+    }
+    console.log(changeUrls) // this one didnt work out
 
       /* EXERCISE 5
        Write a function for adding a new list item in the second unordered list.
       */
 
       const addToTheSecond = function (content) {
-        //
+        const ulSecond= document.getElementById("secondList")
+        const li= document.createElement("li")
+        
+        ulSecond.appendChild(li)
+        li.innerText = content
       };
+      //console.log(addToTheSecond("4th just added"))
 
       /* EXERCISE 6
        Write a function for adding a second paragraph to the first div.
       */
 
       const addParagraph = function (content) {
-        //
+        const p = document.createElement("p")
+        const div = document.querySelector("div")
+        div.appendChild(p)
+        p.innerText = content
       };
+      //console.log(addParagraph("This is newly created"))
 
       /* EXERCISE 7
        Write a function for making the first unordered list disappear.
       */
 
       const firstUlDisappear = function () {
-        //
+        const firstUl = document.querySelector("#firstList")
+        firstUl.remove()
       };
+      console.log(firstUlDisappear)
 
       /* EXERCISE 8
        Write a function for making the background of every unordered list green.
       */
 
       const paintItGreen = function () {
-        //
+        const ul = document.querySelectorAll("ul")
+        ul.style.backgroundColor= color
       };
+      console.log(paintItGreen("green"))
 
       /* EXERCISE 9
        Make the heading of the page change color every time the user clicks on it.
       */
+     function changeColor(e){
+        e.target.style.color = "blue"
+     }
 
       const makeItClickable = function () {
-        //
+        const h1 = document.querySelector("h1")
+        h1.addEventListener("click",changeColor)
       };
+
+      console.log(makeItClickable)
 
       /* EXERCISE 10
        Change the footer text with something else when the user clicks on it.
       */
+     function changeText(e){
+        e.target.innerText = "Click again!"
+     }
 
       const changeFooterText = function () {
-        //
+        const footer = document.querySelector("footer") 
+        footer.addEventListener("click", changeText(e))
       };
+
+      console.log(changeFooterText)
 
       /* EXERCISE 11
        Attach an event listener to the input field in the page for console logging its value just after any keystroke.
@@ -139,7 +173,7 @@
       */
 
       window.onload = function () {
-        //
+        alert("Welcome!")
       };
 
       /* EXERCISE 13
@@ -148,4 +182,5 @@
     </script>
   
 
-</body></html>
+</body>
+</html>
