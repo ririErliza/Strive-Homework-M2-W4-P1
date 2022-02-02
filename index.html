@@ -118,8 +118,8 @@
       */
 
       const firstUlDisappear = function () {
-        const firstUl = document.querySelector("#firstList")
-        firstUl.remove()
+        const firstUl = document.querySelectorAll("ul")
+        document.removeChild(firstUl)
       };
       console.log(firstUlDisappear)
 
@@ -132,6 +132,10 @@
         ul.style.backgroundColor= color
       };
       console.log(paintItGreen("green"))
+
+      // document.addEventListener("click", function(){
+      //   document.querySelectorAll("ul").style.backgroundColor = "green"
+      // });
 
       /* EXERCISE 9
        Make the heading of the page change color every time the user clicks on it.
