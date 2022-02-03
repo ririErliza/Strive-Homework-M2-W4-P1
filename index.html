@@ -118,10 +118,9 @@
       */
 
       const firstUlDisappear = function () {
-        const firstUl = document.querySelectorAll("ul")
-        document.removeChild(firstUl)
-      };
-      console.log(firstUlDisappear)
+        const firstUl = document.querySelector("ul")
+        firstUl.remove()
+      }
 
       /* EXERCISE 8
        Write a function for making the background of every unordered list green.
@@ -129,41 +128,33 @@
 
       const paintItGreen = function () {
         const ul = document.querySelectorAll("ul")
-        ul.style.backgroundColor= color
+        for (let i=0; i<ul.length; i++){
+          ul[i].style.backgroundColor= "green"
+        }
+        
       };
       console.log(paintItGreen("green"))
 
-      // document.addEventListener("click", function(){
-      //   document.querySelectorAll("ul").style.backgroundColor = "green"
-      // });
 
       /* EXERCISE 9
        Make the heading of the page change color every time the user clicks on it.
       */
-     function changeColor(e){
-        e.target.style.color = "blue"
-     }
-
-      const makeItClickable = function () {
-        const h1 = document.querySelector("h1")
-        h1.addEventListener("click",changeColor)
-      };
-
-      console.log(makeItClickable)
+     let h2 = document.querySelector("h2")
+     const makeItClickable = function(){
+        document.h2.style.color = "blue"
+        console.log(document.h2.style.color)
+     };
+     h2.addEventListener("click", makeItClickable)
 
       /* EXERCISE 10
        Change the footer text with something else when the user clicks on it.
       */
-     function changeText(e){
-        e.target.innerText = "Click again!"
-     }
-
+    let footer = document.querySelector("footer")
       const changeFooterText = function () {
-        const footer = document.querySelector("footer") 
-        footer.addEventListener("click", changeText(e))
+        document.footer.innerText="click again!"
+        console.log(document.footer.innerText)
       };
-
-      console.log(changeFooterText)
+      footer.addEventListener("click", changeFooterText)
 
       /* EXERCISE 11
        Attach an event listener to the input field in the page for console logging its value just after any keystroke.
